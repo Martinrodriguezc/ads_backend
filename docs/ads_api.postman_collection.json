@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "ads-backend-api",
+		"name": "Ads Backend API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Ad",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Summer Sale\",\n  \"imageUrl\": \"https://example.com/ad.jpg\",\n  \"placement\": \"home_screen\",\n  \"ttlMinutes\": 60\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/adposts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"adposts"
+					]
+				}
+			}
+		},
+		{
+			"name": "Get Ad by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/adposts/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"adposts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "List Active Ads by Placement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/adspots?placement=home_screen&status=active",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"adspots"
+					],
+					"query": [
+						{
+							"key": "placement",
+							"value": "home_screen"
+						},
+						{
+							"key": "status",
+							"value": "active"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Deactivate Ad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/adposts/:id/deactivate",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"adposts",
+						":id",
+						"deactivate"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
+
