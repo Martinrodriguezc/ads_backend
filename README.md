@@ -20,7 +20,7 @@ go mod download
 ```bash
 go run cmd/main.go
 ```
-Server starts at `http://localhost:8080` if no PORT is specified as a .env variable
+Server starts at `http://localhost:8080` if no HTTP_PORT is specified as a .env variable
 
 ### Export .env variables
 ```bash
