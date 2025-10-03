@@ -48,12 +48,6 @@ go test -v -run TestE2E
 mockery --all
 ```
 
-## Basic Postman Collection
-
-```bash
-docs/Ads_API.postman_collection.json
-```
-
 ## Environment Variables
 
 ```bash
