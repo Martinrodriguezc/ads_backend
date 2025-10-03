@@ -20,13 +20,12 @@ go mod download
 ```bash
 go run cmd/main.go
 ```
+Server starts at `http://localhost:8080` if no PORT is specified as a .env variable
 
 ### Export .env variables
 ```bash
 export $(grep -v '^#' .env | xargs)
 ```
-
-Server starts at `http://localhost:8080`
 
 ### Unit tests
 ```bash
